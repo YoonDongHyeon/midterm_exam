@@ -1,5 +1,3 @@
-# def sort(x,y):
-
 machine_parts =[
  ['A','B''C','D','E'],
  ['1',1,0,1,0,0,0,0],
@@ -17,7 +15,7 @@ machine_part =[
  [0,0,0,0,1,1,1],
  [0,0,0,0,1,1,0],
  [0,0,0,0,0,1,1]]
-
+#기계 명의 제약을 없앰
 while True:
     blank = [[], [], [], [], [], [], []]
     changematrix = [[], [], [], [], [], [], [], []]
@@ -50,25 +48,27 @@ while True:
                         totalmatrix[0][j]=t
                 else:
                     break
+    for l in range(0,7):
+        if totalmatrix[0][l] != totalmatrixsub[0][l]:
+            for k in range(1, 8):
+                for i in range(0, 6):
+                    for j in range(1, 7):
+                        if totalmatrix[0][i] == totalmatrixsub[0][j]:
+                            t = totalmatrix[k][i]
+                            totalmatrix[k][i] = totalmatrix[k][j]
+                            totalmatrix[k][j] = t
+            machine_part = [[], [], [], [], [], [], []]
+            for i in range(0,7):
+                for k in range(1,8):
+                    machine_part[i].append(totalmatrix[k][i])
+            print(machine_part)
+            continue
+        else:
+            break
 
-    for k in range(1, 8):
-        for i in range(0, 6):
-            for j in range(1, 7):
-                if totalmatrix[0][i] == totalmatrixsub[0][j]:
-                    t = totalmatrix[k][i]
-                    totalmatrix[k][i] = totalmatrix[k][j]
-                    totalmatrix[k][j] = t
-    machine_part = [[], [], [], [], [], [], []]
-    for i in range(0,7):
-        for k in range(1,8):
-            machine_part[i].append(totalmatrix[k][i])
 
 
-print(machine_part)
+
 
 
 print(totalmatrix)
-
-
-
-
