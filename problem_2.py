@@ -57,7 +57,7 @@ while True:
                         t = totalmatrix[k][i]
                         totalmatrix[k][i] = totalmatrix[k][j]
                         totalmatrix[k][j] = t
-        #                 
+        #
         machine_part = [[], [], [], [], [], [], []]
         for i in range(0,7):
             for k in range(1,8):
